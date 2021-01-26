@@ -1,5 +1,6 @@
 package site.kirshin.notepad
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -21,7 +22,11 @@ class MainActivity : AppCompatActivity() {
         databaseManager.open();
     }
 
-    fun onClickNew(view: View) {}
+    fun onClickNew(view: View) {
+        // вызываем экран редактирования по клику на кнопку
+        val i = Intent(this, EditActivity::class.java);
+        startActivity(i);
+    }
 
     override fun onDestroy() {
         super.onDestroy();

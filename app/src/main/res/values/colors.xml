@@ -9,5 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#FFBDBDBD</color>
     <color name="background">#535353</color>
-    <color name="bg_button_add">#0239A8</color>
+    <color name="bg_button">#0239A8</color>
 </resources>
