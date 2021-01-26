@@ -19,25 +19,9 @@ class MainActivity : AppCompatActivity() {
         super.onResume();
         // открываем подключение к базе данных
         databaseManager.open();
-        // считываем данные из базы
-        val list = databaseManager.read();
-        for (item in list) {
-            tvNotes.append(item);
-            tvNotes.append("\n");
-        }
     }
 
-    fun onClickSave(view: View) {
-        tvNotes.text = "";
-        // считываем данные и записываем в базу данных
-        databaseManager.insert(edTitle.text.toString(), edContent.text.toString());
-        // считываем данные из базы
-        val list = databaseManager.read();
-        for (item in list) {
-            tvNotes.append(item);
-            tvNotes.append("\n");
-        }
-    }
+    fun onClickNew(view: View) {}
 
     override fun onDestroy() {
         super.onDestroy();
