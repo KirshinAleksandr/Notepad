@@ -13,7 +13,7 @@ class DatabaseHelper (context: Context) : SQLiteOpenHelper(context,
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         // выполняем запрос на удаление старой таблицы
-        db?.execSQL(Database.SQL_DELETE_TABLE);
+        db?.execSQL(Database.SQL_DELETE_TABLE)
 
         // заново создаем таблицу(ы) в базе данных
         onCreate(db)

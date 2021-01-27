@@ -4,12 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import kotlinx.android.synthetic.main.activity_main.*
 import site.kirshin.notepad.db.DatabaseManager
 
 class MainActivity : AppCompatActivity() {
 
-    val databaseManager = DatabaseManager(this);
+    val databaseManager = DatabaseManager(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,20 +16,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onResume() {
-        super.onResume();
+        super.onResume()
         // открываем подключение к базе данных
-        databaseManager.open();
+        databaseManager.open()
     }
 
     fun onClickNew(view: View) {
         // вызываем экран редактирования по клику на кнопку
-        val i = Intent(this, EditActivity::class.java);
-        startActivity(i);
+        val i = Intent(this, EditActivity::class.java)
+        startActivity(i)
     }
 
     override fun onDestroy() {
-        super.onDestroy();
+        super.onDestroy()
         // закрываем подключение к базе данных
-        databaseManager.close();
+        databaseManager.close()
     }
 }
