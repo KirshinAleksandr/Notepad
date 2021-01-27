@@ -86,14 +86,30 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
+        <ImageView
+            android:id="@+id/ivPicture"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:scaleType="centerCrop"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            tools:srcCompat="@tools:sample/avatars" />
+
         <ImageButton
             android:id="@+id/imgBtnEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:onClick="onClickChooseImage"
+            app:layout_constraintEnd_toEndOf="@+id/ivPicture"
+            app:layout_constraintTop_toTopOf="@+id/ivPicture"
             app:srcCompat="@android:drawable/ic_menu_edit" />
 
         <ImageButton
@@ -103,23 +119,10 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:onClick="onClickDeleteImage"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/ivPicture"
             app:layout_constraintEnd_toEndOf="@+id/ivPicture"
             app:srcCompat="@android:drawable/ic_menu_delete" />
 
-        <ImageView
-            android:id="@+id/ivPicture"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:padding="10dp"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            tools:srcCompat="@tools:sample/avatars" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

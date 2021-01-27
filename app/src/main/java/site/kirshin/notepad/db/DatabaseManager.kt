@@ -19,11 +19,12 @@ class DatabaseManager(context: Context) {
         databaseHelper.close()
     }
 
-    fun insert(title: String, content: String) {
+    fun insert(title: String, content: String, imageUri: String) {
         // подготавливаем данные для записи в базу
         val values = ContentValues().apply {
             put(Database.COLUMN_NAME_TITLE, title)
             put(Database.COLUMN_NAME_CONTENT, content)
+            put(Database.COLUMN_NAME_IMAGE_URI, imageUri)
         }
         // вставляем подготовленные данные
         db?.insert(Database.TABLE_NAME, null, values)
